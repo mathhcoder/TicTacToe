@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7CAC9"
+    tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guid_y1"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guid_y2"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_y4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guid_y3"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guid_y5"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"
+        />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/guid_x"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Tic Tac Toe"
+        android:textAlignment="center"
+        android:textColor="#DD4124"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/guid_y1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="634dp"
+        android:layout_marginBottom="10dp"
+        android:text="created by Jamshidkhan"
+        android:textAlignment="center"
+        android:textColor="#DD4124"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioGroup
+
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@+id/guid_y1"
+        app:layout_constraintBottom_toTopOf="@+id/guid_y2"
+        tools:ignore="MissingConstraints"
+
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <RadioButton
+            android:id="@+id/radio_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="80dp"
+            android:checked="true"
+            android:text="Single Player"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <RadioButton
+            android:id="@+id/radio_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginRight="50dp"
+            android:text="Play with friend"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/guid_y2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guid_y3"
+        app:layout_constraintEnd_toStartOf="@id/guid_x"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Player 1"
+            android:textSize="36dp"
+            android:textColor="#000"
+
+            android:textAlignment="center"
+            />
+
+        <EditText
+            android:id="@+id/first_PlayerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:hint="Input your name"
+            android:textAlignment="center"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/SecondBoard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/guid_y3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guid_x"
+
+        app:layout_constraintTop_toTopOf="@id/guid_y2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Player 2"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="36dp" />
+
+        <EditText
+            android:id="@+id/second_PlayerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Input your name"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/RoboBoard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/guid_y3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guid_x"
+
+        app:layout_constraintTop_toTopOf="@id/guid_y2">
+        <TextView
+            android:id="@+id/RoboName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:enabled="true"
+            android:text="Choose "
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:textSize="36dp"
+            />
+        <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textColor="#000"
+                 android:layout_weight="1"
+
+                android:textSize="30dp" />
+
+
+
+
+    </LinearLayout>
+    <RadioGroup
+
+        android:id="@+id/radio_groupXO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/guid_y4"
+        app:layout_constraintBottom_toTopOf="@id/guid_y5"
+        tools:ignore="MissingConstraints">
+
+
+        <RadioButton
+            android:id="@+id/radio_X"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+
+
+            android:checked="true"
+            android:paddingEnd="30dp"
+            android:paddingRight="30dp"
+            android:text="X"
+            android:textAlignment="center"
+            android:textColor="#DD4124"
+            android:textSize="130dp"
+            app:layout_constraintEnd_toEndOf="@id/guid_x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guid_y4" />
+
+        <RadioButton
+            android:id="@+id/radio_O"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="O"
+            android:textAlignment="center"
+            android:textColor="#009B77"
+            android:textSize="130dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guid_x"
+            app:layout_constraintTop_toBottomOf="@+id/guid_y4" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="#C3447A"
+        android:text="Play"
+        android:textColor="#F7CAC9"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guid_y5"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
